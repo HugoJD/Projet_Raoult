@@ -1,6 +1,10 @@
 package com.example.projetosmani;
 
+import android.util.Log;
+
 public class Doctor extends Personnages {
+
+    // Constantes de direction (Nord, Sud, Est, Ouest)
 
     private float posx;
     private float posy;
@@ -20,7 +24,4 @@ public class Doctor extends Personnages {
     public void moveDoc(){
 
     }
-
-
-
 }

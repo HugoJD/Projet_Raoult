@@ -55,6 +55,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             canvas.translate(-map_w * Map.TILE_SIZE,Map.TILE_SIZE);
             h += 1;
         }
+
         // A compléter avec le reste de notre affichage
     }
 
