@@ -88,6 +88,11 @@ public class Map {
                 d.setBounds(0,0,TILE_SIZE,TILE_SIZE);
                 images.put('S', d);
                 break;
+            case 'D':
+                d = resources.getDrawable(R.drawable.face, null);
+                d.setBounds(0,0,32,41);
+                images.put('D', d);
+                break;
             default:
                 break;
         }
