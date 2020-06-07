@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
 
         // et on l'affiche.
         setContentView(gameView);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
         
         BoutonGauche = (Button) findViewById(R.id.gauche);
         BoutonDroite = (Button) findViewById(R.id.droite);
