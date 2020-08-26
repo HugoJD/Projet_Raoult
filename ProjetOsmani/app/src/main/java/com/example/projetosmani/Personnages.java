@@ -3,26 +3,22 @@ package com.example.projetosmani;
 import android.graphics.drawable.Drawable;
 
 public class Personnages {
-
-    private float  posx ;
-    private float  posy ;
+/*
+    private int  posx ;
+    private int  posy ;
 
     private int life ;
     private boolean death ;
 
-    private float width ;
-    private float height ;
+    private int width ;
+    private int height ;
     private Drawable avatar ;
 
     private int movX ;
     private int movY ;
     private int speed ;
 
-    public Personnages(){
-        super();
-    }
-
-    public Personnages(float posx,float posy,float width, float height, int life, int speed) {
+    public Personnages(int posx,int posy,int width, int height, int life, int speed) {
         this.posx = posx ;
         this.posy = posy ;
 
@@ -41,17 +37,17 @@ public class Personnages {
         return this.posy ;
     }
 
-    public void setX(float posx){
+    public void setX(int posx){
         this.posx = posx ;
     }
 
-    public void setY(float posy){
+    public void setY(int posy){
         this.posy = posy ;
     }
 
     public void setLife(int life){
         this.life = life ;
     }
-
+*/
 
 }
