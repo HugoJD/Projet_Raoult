@@ -16,6 +16,8 @@ import java.util.HashMap;
 public class Map {
 
     public static final int TILE_SIZE = 32;
+    public static final int ARROW_SIZE = 86;
+    public static final int DISPLAYED_TILES = 17;
 
     private int width;
     private int height;
@@ -46,8 +48,12 @@ public class Map {
             int docPosX = Integer.valueOf(strCurrentLine);
             strCurrentLine = bufferedreader.readLine();
             int docPosY = Integer.valueOf(strCurrentLine);
-            doctor = new Doctor(docPosX, docPosY);
+            doctor = new Doctor(docPosX, docPosY, this);
             addKey('D');
+            addKey('1');
+            addKey('2');
+            addKey('3');
+            addKey('4');
 
             int i = 0;
             while ((strCurrentLine = bufferedreader.readLine()) != null) {
@@ -103,6 +109,26 @@ public class Map {
                 d = resources.getDrawable(R.drawable.facetest, null);
                 d.setBounds(0,0,32,41);
                 images.put('D', d);
+                break;
+            case '1':
+                d = resources.getDrawable(R.drawable.fhaut, null);
+                d.setBounds(0,0,ARROW_SIZE,ARROW_SIZE);
+                images.put('1', d);
+                break;
+            case '2':
+                d = resources.getDrawable(R.drawable.fdroite, null);
+                d.setBounds(0,0,ARROW_SIZE,ARROW_SIZE);
+                images.put('2', d);
+                break;
+            case '3':
+                d = resources.getDrawable(R.drawable.fbas, null);
+                d.setBounds(0,0,ARROW_SIZE,ARROW_SIZE);
+                images.put('3', d);
+                break;
+            case '4':
+                d = resources.getDrawable(R.drawable.fgauche, null);
+                d.setBounds(0,0,ARROW_SIZE,ARROW_SIZE);
+                images.put('4', d);
                 break;
             default:
                 break;

@@ -41,6 +41,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         // on efface l'écran, en blanc
         canvas.drawColor(Color.WHITE);
+        canvas.translate((this.getWidth() - Map.DISPLAYED_TILES * Map.TILE_SIZE) / 2, 0.f);
         Drawable d = null;
         int h = 0;
         int map_h = map.getHeight();
@@ -64,7 +65,19 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         d.draw(canvas);
         Log.d("Print", "doDraw: DR DONE" + doctor.getPosx());
 
-
+        canvas.translate(-doctor.getPosx() * Map.TILE_SIZE, -doctor.getPosy() * Map.TILE_SIZE);
+        canvas.translate(this.getWidth()/2 - 2 * Map.ARROW_SIZE,  this.getHeight()* 2 / 3);
+        d = map.getImage('1');
+        d.draw(canvas);
+        canvas.translate(-Map.ARROW_SIZE, Map.ARROW_SIZE);
+        d = map.getImage('4');
+        d.draw(canvas);
+        canvas.translate(2 * Map.ARROW_SIZE, 0.f);
+        d = map.getImage('2');
+        d.draw(canvas);
+        canvas.translate(-Map.ARROW_SIZE, Map.ARROW_SIZE);
+        d = map.getImage('3');
+        d.draw(canvas);
         // A compléter avec le reste de notre affichage
     }
 
@@ -106,6 +119,34 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         // Fonction principale d'interprétation
+        float arr = Map.ARROW_SIZE;
+        float pos1X = this.getWidth()/2 + 24;
+        float pos1Y = this.getHeight()* 2 / 3 + arr;
+        if (event.getX() < pos1X && event.getX() > pos1X - arr) {
+            if (event.getY() < pos1Y && event.getY() > pos1Y - arr) {
+                map.getDoctor().moveDoc(1);
+            }
+        }
+        pos1X -= arr;
+        pos1Y += arr;
+        if (event.getX() < pos1X && event.getX() > pos1X - arr) {
+            if (event.getY() < pos1Y && event.getY() > pos1Y - arr) {
+                map.getDoctor().moveDoc(4);
+            }
+        }
+        pos1X += 2 * arr;
+        if (event.getX() < pos1X && event.getX() > pos1X - arr) {
+            if (event.getY() < pos1Y && event.getY() > pos1Y - arr) {
+                map.getDoctor().moveDoc(2);
+            }
+        }
+        pos1X -= arr;
+        pos1Y += arr;
+        if (event.getX() < pos1X && event.getX() > pos1X - arr) {
+            if (event.getY() < pos1Y && event.getY() > pos1Y - arr) {
+                map.getDoctor().moveDoc(3);
+            }
+        }
         return true;
     }
 
