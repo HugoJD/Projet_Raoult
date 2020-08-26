@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -55,6 +56,14 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             canvas.translate(-map_w * Map.TILE_SIZE,Map.TILE_SIZE);
             h += 1;
         }
+        Doctor doctor = map.getDoctor();
+
+        canvas.translate(0.f, -map_h * Map.TILE_SIZE);
+        canvas.translate(doctor.getPosx() * Map.TILE_SIZE, doctor.getPosy() * Map.TILE_SIZE);
+        d = map.getImage('D');
+        d.draw(canvas);
+        Log.d("Print", "doDraw: DR DONE" + doctor.getPosx());
+
 
         // A compléter avec le reste de notre affichage
     }

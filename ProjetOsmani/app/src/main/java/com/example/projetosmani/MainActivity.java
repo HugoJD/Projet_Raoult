@@ -32,17 +32,19 @@ public class MainActivity extends Activity {
             e.printStackTrace();
         }
         Log.d("Print", "onCreate: " + m.toString());
+
         // On cré un objet "GameView" qui est le code principal du jeu
         gameView=new GameView(this, m);
-
         // et on l'affiche.
         setContentView(gameView);
         //setContentView(R.layout.activity_main);
-        
+/*
         BoutonGauche = (Button) findViewById(R.id.gauche);
         BoutonDroite = (Button) findViewById(R.id.droite);
         BoutonBas = (Button) findViewById(R.id.bas);
         BoutonHaut = (Button) findViewById(R.id.haut);
+
+
 
         BoutonGauche.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +78,7 @@ public class MainActivity extends Activity {
                 //raoult.setPosition(raoult.getX(); raoult.getY()+1);
             }
         });
-
+*/
     }
 
 } // class MainActivity
