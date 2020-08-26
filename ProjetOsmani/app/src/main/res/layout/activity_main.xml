@@ -9,65 +9,13 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hello World!" />
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
 
     </LinearLayout>
 
-
-    <RelativeLayout
-        android:id="@+id/layout_fleches"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_alignParentBottom="true">
-
-        <View
-            android:id="@+id/view1"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_above="@+id/bas"
-            android:layout_centerHorizontal="true" />
-
-        <Button
-            android:id="@+id/haut"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_above="@id/view1"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/fleche_haut" />
-
-        <Button
-            android:id="@+id/bas"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/fleche_bas" />
-
-        <Button
-            android:id="@+id/gauche"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_alignTop="@id/view1"
-            android:layout_toLeftOf="@id/view1"
-            android:background="@drawable/fleche_gauche" />
-
-        <Button
-            android:id="@+id/droite"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_alignTop="@id/view1"
-            android:layout_centerHorizontal="true"
-            android:layout_toRightOf="@id/view1"
-            android:background="@drawable/fleche_droite" />
-    </RelativeLayout>
 
 </RelativeLayout>
