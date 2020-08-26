@@ -22,6 +22,7 @@ public class Map {
     private char map[][];
     private Resources resources;
     private HashMap<Character, Drawable> images;
+    private Doctor doctor;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public Map(AssetManager assetManager, String nomFichier, Resources resources) throws IOException {
@@ -40,6 +41,14 @@ public class Map {
             strCurrentLine = bufferedreader.readLine();
             width = Integer.valueOf(strCurrentLine);
             map = new char[height][];
+
+            strCurrentLine = bufferedreader.readLine();
+            int docPosX = Integer.valueOf(strCurrentLine);
+            strCurrentLine = bufferedreader.readLine();
+            int docPosY = Integer.valueOf(strCurrentLine);
+            doctor = new Doctor(docPosX, docPosY);
+            addKey('D');
+
             int i = 0;
             while ((strCurrentLine = bufferedreader.readLine()) != null) {
                 map[i] = new char[width];
@@ -66,6 +75,8 @@ public class Map {
         }
     }
 
+    public Doctor getDoctor() { return doctor; }
+
     public Drawable getImage(char c) {
         return images.get(c);
     }
@@ -89,7 +100,7 @@ public class Map {
                 images.put('S', d);
                 break;
             case 'D':
-                d = resources.getDrawable(R.drawable.face, null);
+                d = resources.getDrawable(R.drawable.facetest, null);
                 d.setBounds(0,0,32,41);
                 images.put('D', d);
                 break;
